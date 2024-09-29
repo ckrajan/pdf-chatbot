@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="static/main.css">
+
+  <script src="https://kit.fontawesome.com/716aab55ab.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.2/pdf.min.js"></script>
+  <title>Ententia</title>
+</head>
+
+<body style="margin-left: 530px; background-color: rgb(255, 255, 255);">
+  <br><label id="banner">AskYourDocuments</label>
+  <form method="post" action="/" enctype="multipart/form-data">
+    <div id="dropdown">
+      <label for="select">Uploaded pdf files:</label>
+      <select id="pdfInput" size="4">
+      </select>
+    </div>
+    <dl>
+      <p>
+      <p>
+        <b>Upload the pdf file: </b>
+      </p>
+      <input type="file" id="upload" name="file" autocomplete="off" accept=".pdf" required>
+      </p>
+    </dl>
+    <p>
+      <input type="submit" id="upload_id" value="Upload" accept=".pdf">
+    </p>
+    <br>
+  </form>
+  <div id="loader" style="display:none;"></div>
+  <textarea class="form-control" name="answer" id="answer" style="resize: none" rows="15" placeholder="" cols="40"
+  readonly="readonly"></textarea>
+  <br>
+  <textarea class="form-control" name="query" id="query" style="resize: none" rows="2"
+    placeholder="Enter your query" cols="40"></textarea>
+  <button id="click_answer" onclick="get_response()">Get answer</button>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="static/doc_read.js"></script>
+</html>
