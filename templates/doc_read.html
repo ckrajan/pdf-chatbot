@@ -15,7 +15,7 @@
 </head>
 
 <body style="margin-left: 530px; background-color: rgb(255, 255, 255);">
-  <br><label id="banner">AskYourDocuments</label>
+  <label id="banner">AskYourDocuments</label>
   <form method="post" action="/" enctype="multipart/form-data">
     <div id="dropdown">
       <label for="select">Uploaded pdf files:</label>
@@ -33,15 +33,18 @@
     <p>
       <input type="submit" id="upload_id" value="Upload" accept=".pdf">
     </p>
-    <br>
   </form>
+  <br>
+  <button id="remove_file" onclick="remove_file()" style="display:none;">Remove files</button>
+
   <div id="loader" style="display:none;"></div>
+  <br>
   <textarea class="form-control" name="answer" id="answer" style="resize: none" rows="15" placeholder="" cols="40"
   readonly="readonly"></textarea>
   <br>
   <textarea class="form-control" name="query" id="query" style="resize: none" rows="2"
     placeholder="Enter your query" cols="40"></textarea>
-  <button id="click_answer" onclick="get_response()">Get answer</button>
+  <button id="click_answer" onclick="get_response()" style="display:none;">Get answer</button>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

@@ -59,6 +59,18 @@ def uploaded_files():
         files = [ fname for fname in allfiles ]
         return jsonpickle.encode(files)
 
+@app.route('/remove_file', methods=['GET', 'POST'])
+def remove_file():
+    pdf_list = 'static/uploads/'
+    if os.path.exists('static/uploads'):
+        for parent, dirnames, filenames in os.walk(pdf_list):
+            for fn in filenames:
+                if fn.lower().endswith('.pdf'):
+                    os.remove(os.path.join(parent, fn))
+        allfiles = os.listdir(pdf_list)
+        files = [ fname for fname in allfiles ]
+        return jsonpickle.encode(files)
+    
 @app.route('/get_response', methods=['GET', 'POST'])
 def get_response():
     path = 'static/uploads/'
